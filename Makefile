@@ -21,7 +21,7 @@ start: ## starts dev environment
 
 .PHONY: tree
 tree: ## lists the projects file structure
-	tree -I 'dist|node_modules|build|public'
+	@tree -I 'dist|node_modules|build|public'
 
 .PHONY: log
 log: ## show git log

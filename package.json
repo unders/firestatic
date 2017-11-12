@@ -4,7 +4,11 @@
   "description": "develop and serv static HTML sites on firebase",
   "main": "main.js",
   "devDependencies": {
-    "node-sass": "4.5.3"
+    "node-sass": "4.5.3",
+    "typescript": "^2.5.2",
+    "webpack": "^3.5.6",
+    "awesome-typescript-loader": "^3.2.3",
+    "source-map-loader": "^0.2.1"
   },
   "scripts": {
     "test": "test"

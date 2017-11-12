@@ -1,5 +1,8 @@
+import { log } from "../log/log";
+
 const main = () => {
-    console.log("it works");
+    const logger = log({ online: false });
+    logger.info("it works, yes");
 };
 
 main();
