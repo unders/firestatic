@@ -19,6 +19,10 @@ install: ## installs dependencis
 start: ## starts dev environment
 	@modd -f project/$(PROJECT)/config/modd.dev.conf
 
+.PHONY: tree
+tree: ## lists the projects file structure
+	tree -I 'dist|node_modules|build|public'
+
 .PHONY: log
 log: ## show git log
 	@git log --graph --oneline --decorate
