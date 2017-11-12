@@ -13,7 +13,7 @@ install: ## installs dependencis
 	## go get github.com/cortesi/modd/cmd/modd
 	## npm install -g firebase-tools
 	## cd functions && yarn install
-	## npm install
+	npm install
 
 .PHONY: start
 start: ## starts dev environment
