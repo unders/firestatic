@@ -1,5 +1,8 @@
+PROJECT :=autumn
+
 .PHONY: help
 help:
+	@echo "Current project: $(PROJECT)"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
 	awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
@@ -14,4 +17,4 @@ install: ## installs dependencis
 
 .PHONY: start
 start: ## starts dev environment
-	@modd -f support/modd.dev.conf
+	@modd -f project/$(PROJECT)/config/modd.dev.conf
