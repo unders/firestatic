@@ -18,3 +18,7 @@ install: ## installs dependencis
 .PHONY: start
 start: ## starts dev environment
 	@modd -f project/$(PROJECT)/config/modd.dev.conf
+
+.PHONY: log
+log: ## show git log
+	@git log --graph --oneline --decorate
