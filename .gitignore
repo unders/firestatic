@@ -59,6 +59,6 @@ typings/
 # dotenv environment variables file
 .env
 
-firebase.json
+/firebase.json
 websites/base/assets
 .firebaserc

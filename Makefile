@@ -17,19 +17,18 @@ install: ## installs dependencis
 
 .PHONY: start
 start: ## start dev environment
-	@cp support/env.dev.ts src/env/env.ts
 	@modd -f project/$(PROJECT)/config/modd.dev.conf
 
 .PHONY: release
 release: ## create a release
+	@cp support/env.prod.ts src/env/env.ts
 	@rm -rf project/$(PROJECT)/public
 	@rsync -avz --delete --exclude 'assets/css' --exclude 'assets/js' websites/$(PROJECT)/ project/$(PROJECT)/public
-	@cp support/env.prod.ts src/env/env.ts
 	@node_modules/.bin/node-sass --output-style compressed --output ./project/$(PROJECT)/public/assets/css ./sass/$(THEME)
 	@node_modules/.bin/webpack --config project/$(PROJECT)/config/webpack.dev.config.js
 	@node_modules/.bin/webpack --config project/$(PROJECT)/config/webpack.prod.config.js
-	@cp support/env.dev.ts src/env/env.ts
 	@./bin/hasher.sh $(PROJECT)
+	@cp support/env.dev.ts src/env/env.ts
 
 .PHONY: tree
 tree: ## lists the file structure

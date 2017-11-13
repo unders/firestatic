@@ -11,6 +11,10 @@ function update() {
     for file in $(find ${public});
     do
         if [ -f "$file" ];then
+            if [[ ${file} =~ (.*)\.(gif|png|jpg|xml|json|ico)$ ]]; then
+                # we should not update these files
+                continue
+            fi
             sed -i oldx "s|$old|$new|g" ${file}
             rm ${file}oldx
         fi
@@ -48,7 +52,7 @@ renameFiles() {
 
 main() {
     local project=$1
-    
+
     updateFiles project/${project}/public
     renameFiles project/${project}/public
 }
