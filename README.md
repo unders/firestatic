@@ -14,18 +14,18 @@ Firestatic is used for:
 1a. Manual steps (if you have Go installed)
 
 ```
-    go get github.com/cortesi/modd/cmd/modd
-    npm install -g typescript
-    npm install -g firebase-tools
+go get github.com/cortesi/modd/cmd/modd
+npm install -g typescript
+npm install -g firebase-tools
 ```
 
 1b. Manual steps (if Go is not installed)
 
-Download and install: [modd](https://github.com/cortesi/modd/releases)
+First install: [modd](https://github.com/cortesi/modd/releases)
 
 ```
-    npm install -g typescript
-    npm install -g firebase-tools
+npm install -g typescript
+npm install -g firebase-tools
 ```
 
 2. Install npm packages
