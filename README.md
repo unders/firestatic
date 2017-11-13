@@ -11,6 +11,7 @@ Firestatic is used for:
 Run these commands:
 ```
 go get github.com/cortesi/modd/cmd/modd
+brew install openssl
 npm install -g typescript
 npm install -g firebase-tools
 ```
@@ -19,6 +20,7 @@ npm install -g firebase-tools
 
 First install: [modd](https://github.com/cortesi/modd/releases), then:
 ```
+brew install openssl
 npm install -g typescript
 npm install -g firebase-tools
 ```

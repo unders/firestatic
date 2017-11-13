@@ -60,5 +60,5 @@ typings/
 .env
 
 firebase.json
-assets
+websites/base/assets
 .firebaserc
