@@ -1,6 +1,13 @@
 PROJECT :=base
 THEME :=autumn
 
+BUILDSTAMP :=$(shell date -u '+%Y-%m-%dT%I:%M%p')
+GITTAG :=v0.0.1
+GITHASH :=$(shell git rev-parse HEAD)
+VERSION := project/$(PROJECT)/config/deployed-version.txt
+PREVIOUS := project/$(PROJECT)/config/deployed-previous.txt
+DEPLOYED_VERSION := project/$(PROJECT)/public/deployed-version.txt
+
 .PHONY: help
 help:
 	@echo "   - project: $(PROJECT); theme: $(THEME) -"
@@ -28,6 +35,9 @@ release: ## create a release
 	@node_modules/.bin/webpack --config project/$(PROJECT)/config/webpack.dev.config.js
 	@node_modules/.bin/webpack --config project/$(PROJECT)/config/webpack.prod.config.js
 	@./bin/hasher.sh $(PROJECT)
+	@cp $(VERSION)  $(PREVIOUS)
+	@echo tag:$(GITTAG) time:$(BUILDSTAMP) githash:$(GITHASH) project:$(PROJECT) theme:$(THEME) > $(VERSION)
+	@cp $(VERSION) $(DEPLOYED_VERSION)
 	@cp support/env.dev.ts src/env/env.ts
 
 .PHONY: tree
