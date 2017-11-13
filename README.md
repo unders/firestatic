@@ -69,6 +69,8 @@ Run command: `make` to list available commands.
 
 ### Firebase Hosting
 * [Doc](https://firebase.google.com/docs/hosting/)
+* [Report bugs](https://firebase.google.com/support/contact/bugs-features/)
+* [server push using link headers](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html)
 
 ### CSS
 * [Apple CSS](http://www.cssstats.com/stats?url=http%3A%2F%2Fapple.com&name=Apple)
