@@ -6,7 +6,7 @@ Firestatic is used for:
 
 ## Setup
 
-1a. Manual steps (if you have Go installed)
+#### 1a. Manual steps (if you have Go installed)
 
 Run these commands:
 ```
@@ -15,7 +15,7 @@ npm install -g typescript
 npm install -g firebase-tools
 ```
 
-1b. Manual steps (if Go is not installed)
+#### 1b. Manual steps (if Go is not installed)
 
 First install: [modd](https://github.com/cortesi/modd/releases), then:
 ```
@@ -24,7 +24,7 @@ npm install -g firebase-tools
 ```
 
 
-2. Install npm packages
+#### 2. Install npm packages
 
 Run command: `make install`
 
