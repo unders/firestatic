@@ -2,7 +2,7 @@ PROJECT :=base
 
 .PHONY: help
 help:
-	@echo "Current project: $(PROJECT)"
+	@echo "           - project: $(PROJECT) -"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
 	awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
@@ -14,11 +14,20 @@ install: ## installs dependencis
 	npm install
 
 .PHONY: start
-start: ## starts dev environment
+start: ## start dev environment
+	@cp support/env.dev.ts src/env/env.ts
 	@modd -f project/$(PROJECT)/config/modd.dev.conf
 
+
+.PHONY: release
+release: ## create a release
+	@cp support/env.prod.ts src/env/env.ts
+
+	##
+	@cp support/env.dev.ts src/env/env.ts
+
 .PHONY: tree
-tree: ## lists the projects file structure
+tree: ## lists the file structure
 	@tree -I 'dist|node_modules|build|'
 
 .PHONY: log
