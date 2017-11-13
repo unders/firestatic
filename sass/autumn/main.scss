@@ -1,3 +1,7 @@
+@import "../space";
+
 body {
+  @include pa1();
   background: green;
+  margin: 0;
 }
