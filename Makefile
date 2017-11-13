@@ -1,8 +1,9 @@
 PROJECT :=base
+THEME :=autumn
 
 .PHONY: help
 help:
-	@echo "           - project: $(PROJECT) -"
+	@echo "   - project: $(PROJECT); theme: $(THEME) -"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
 	awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
@@ -21,10 +22,11 @@ start: ## start dev environment
 
 .PHONY: release
 release: ## create a release
+	@rsync -avz --delete --exclude 'assets/css' --exclude 'assets/js' websites/$(PROJECT) project/$(PROJECT)/public
 	@cp support/env.prod.ts src/env/env.ts
-	@node_modules/.bin/node-sass --output-style compressed --output ./project/$(project)/public/assets/css ./sass
+	@node_modules/.bin/node-sass --output-style compressed --output ./project/$(PROJECT)/public/assets/css ./sass/$(THEME)
 	@node_modules/.bin/webpack --config project/$(PROJECT)/config/webpack.dev.config.js
-	# @node_modules/.bin/webpack --config project/$(PROJECT)/config/webpack.prod.config.js
+	@node_modules/.bin/webpack --config project/$(PROJECT)/config/webpack.prod.config.js
 
 	##
 	@cp support/env.dev.ts src/env/env.ts
