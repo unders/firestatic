@@ -44,7 +44,7 @@ Run command: `make install`
 Update the GITTAG (i.e: 0.0.1) in the Makefile. Then do this:
 
 ```
- make release  ## A test run to see that it works.
+ make release
  git commit -m "bump to version: v0.0.1"
  git push
  git tag -a v0.0.1 -m "write a release message"
