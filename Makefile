@@ -1,4 +1,4 @@
-PROJECT :=autumn
+PROJECT :=base
 
 .PHONY: help
 help:
@@ -8,11 +8,9 @@ help:
 
 .PHONY: install
 install: ## installs dependencis
-	## brew install yarn --without-node
-	## npm install -g typescript
 	## go get github.com/cortesi/modd/cmd/modd
+	## npm install -g typescript
 	## npm install -g firebase-tools
-	## cd functions && yarn install
 	npm install
 
 .PHONY: start
@@ -21,7 +19,7 @@ start: ## starts dev environment
 
 .PHONY: tree
 tree: ## lists the projects file structure
-	@tree -I 'dist|node_modules|build|public'
+	@tree -I 'dist|node_modules|build|'
 
 .PHONY: log
 log: ## show git log
