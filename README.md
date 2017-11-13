@@ -1,7 +1,7 @@
 # Firestatic
 Firestatic is used for:
-* Developing static HTML websites
-* Deploy them to the firebase hosting platform
+* Developing static HTML websites, and
+* Deploying them to the firebase hosting platform
 
 
 ## Setup
