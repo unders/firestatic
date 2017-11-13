@@ -32,7 +32,7 @@ Run command: `make install`
 
 
 ## Projects
-* Base
+* [Base](https://firestatic-base.firebaseapp.com/)
 
 
 ## Themes
