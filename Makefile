@@ -22,6 +22,9 @@ start: ## start dev environment
 .PHONY: release
 release: ## create a release
 	@cp support/env.prod.ts src/env/env.ts
+	@node_modules/.bin/node-sass --output-style compressed --output ./project/$(project)/public/assets/css ./sass
+	@node_modules/.bin/webpack --config project/$(PROJECT)/config/webpack.dev.config.js
+	# @node_modules/.bin/webpack --config project/$(PROJECT)/config/webpack.prod.config.js
 
 	##
 	@cp support/env.dev.ts src/env/env.ts
