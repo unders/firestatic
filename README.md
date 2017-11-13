@@ -61,6 +61,8 @@ make deploy
 
 ### Performance
 * [REDbot](https://redbot.org/?uri=https%3A%2F%2Ffirestatic-base.firebaseapp.com%2F)
+* [Pingdom](https://tools.pingdom.com/)
+* [Web Page Performance Test](https://www.webpagetest.org)
 
 ## Help
 Run command: `make` to list available commands.
