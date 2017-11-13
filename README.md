@@ -57,6 +57,11 @@ Go to project's folder and run:
 make deploy
 ```
 
+## Tools
+
+### Performance
+* [REDbot](https://redbot.org/?uri=https%3A%2F%2Ffirestatic-base.firebaseapp.com%2F)
+
 ## Help
 Run command: `make` to list available commands.
 
