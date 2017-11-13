@@ -10,8 +10,8 @@ Firestatic is used for:
 * Autumn
 
 ## Setup
-
 Run command `make install`.
+
 1a. Manual steps (if you have Go installed):
 `
 	go get github.com/cortesi/modd/cmd/modd
