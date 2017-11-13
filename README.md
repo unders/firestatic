@@ -13,6 +13,7 @@ Firestatic is used for:
 Run command `make install`.
 
 1a. Manual steps (if you have Go installed):
+
 `
 	go get github.com/cortesi/modd/cmd/modd
     npm install -g typescript
@@ -20,7 +21,9 @@ Run command `make install`.
 `
 
 1b. Manual steps (if go is not installed):
+
 Download and install: [modd](https://github.com/cortesi/modd/releases)
+
 `
     npm install -g typescript
 	npm install -g firebase-tools
