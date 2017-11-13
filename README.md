@@ -15,9 +15,9 @@ Run command `make install`.
 1a. Manual steps (if you have Go installed):
 
 ```
-	go get github.com/cortesi/modd/cmd/modd
+    go get github.com/cortesi/modd/cmd/modd
     npm install -g typescript
-	npm install -g firebase-tools
+    npm install -g firebase-tools
 ```
 
 1b. Manual steps (if go is not installed):
@@ -26,7 +26,7 @@ Download and install: [modd](https://github.com/cortesi/modd/releases)
 
 ```
     npm install -g typescript
-	npm install -g firebase-tools
+    npm install -g firebase-tools
 ```
 
 2. make install
