@@ -3,11 +3,6 @@ Firestatic is used for:
 * Developing static HTML websites
 * Deploy them to the firebase hosting platform
 
-## Projects
-* Base
-
-## Themes
-* Autumn
 
 ## Setup
 
@@ -33,8 +28,16 @@ npm install -g firebase-tools
 Run command: `make install`
 
 
-## Deployment
+## Projects
+* Base
 
+
+## Themes
+* Autumn
+
+
+## Deployment
+ TODO
 
 ## Help
 Run command: `make` to list available commands.
