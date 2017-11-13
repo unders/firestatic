@@ -10,9 +10,8 @@ Firestatic is used for:
 * Autumn
 
 ## Setup
-Run command `make install`.
 
-1a. Manual steps (if you have Go installed):
+1a. Manual steps (if you have Go installed)
 
 ```
     go get github.com/cortesi/modd/cmd/modd
@@ -20,7 +19,7 @@ Run command `make install`.
     npm install -g firebase-tools
 ```
 
-1b. Manual steps (if go is not installed):
+1b. Manual steps (if Go is not installed)
 
 Download and install: [modd](https://github.com/cortesi/modd/releases)
 
@@ -29,7 +28,10 @@ Download and install: [modd](https://github.com/cortesi/modd/releases)
     npm install -g firebase-tools
 ```
 
-2. make install
+2. Install npm packages
+
+Run command: `make install`
+
 
 ## Deployment
 
