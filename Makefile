@@ -1,8 +1,9 @@
 PROJECT :=base
 THEME :=autumn
 
-BUILDSTAMP :=$(shell date -u '+%Y-%m-%dT%I:%M%p')
 GITTAG :=v0.0.1
+
+BUILDSTAMP :=$(shell date -u '+%Y-%m-%dT%I:%M%p')
 GITHASH :=$(shell git rev-parse HEAD)
 VERSION := project/$(PROJECT)/config/deployed-version.txt
 PREVIOUS := project/$(PROJECT)/config/deployed-previous.txt

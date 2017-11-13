@@ -40,7 +40,22 @@ Run command: `make install`
 
 
 ## Deployment
- TODO
+
+Update the GITTAG (i.e: 0.0.1) in the Makefile. Then do this:
+
+```
+ make release  ## A test run to see that it works.
+ git commit -m "bump to version: v0.0.1"
+ git push
+ git tag -a v0.0.1 -m "write a release message"
+ git push origin v0.0.1
+```
+
+Go to project's folder and run:
+
+```
+make deploy
+```
 
 ## Help
 Run command: `make` to list available commands.
