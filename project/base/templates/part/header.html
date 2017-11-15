@@ -1,0 +1,8 @@
+{{- define "part/header" -}}
+<header>
+    {{- range .Array.Header }}
+        <a href="{{.URL}}" title="{{.Name}}">{{.Name}}</a>
+    {{- end }}
+</header>
+{{ end -}}
+

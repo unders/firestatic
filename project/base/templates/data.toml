@@ -1,0 +1,55 @@
+# This is the tmplgen data file
+# See more about TOML files here:
+#
+#     * https://github.com/toml-lang/toml
+#     * https://goo.gl/CEGc3C
+
+[[Layouts]]
+# This it the default layout
+path = "/"
+Filename = "main.html"
+
+[[Layouts]]
+# This layout will be used for pages in subfolders to: page/error/
+path = "/404.html"
+Filename = "error.html"
+
+
+# Usage:
+#
+# {{ .String.Title }}     =>     Firestatic Base Project
+#
+# key/value added under [String] is accessible inside
+# your HTML templates.
+#
+# Add your own string values here:
+[String]
+Title = "Firestatic Base Project"
+Title_Index = "Index | Firestatic Base Project"
+Title_404 = "Page Not Found | Firestatic Base Project"
+
+
+
+# Usage:
+#
+# <ul>
+# {{- range .Array.Users }}
+#    <li>
+#        {{ .FirstName }}
+#        {{ .LastName }}
+#        {{ .Email }}
+#    </li>
+# {{- end }}
+# </ul>
+# Add your own Data arrays here:
+[[Array.Header]]
+    Name = "Firestatic Base Project"
+    URL = "/"
+
+[[Array.Header]]
+    Name = "About"
+    URL = "/about"
+
+[[Array.Footer]]
+    Name = "Firestatic Base Project"
+    URL = "/"

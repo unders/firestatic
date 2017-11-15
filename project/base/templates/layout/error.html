@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="firestatic base template">
+    <title>{{block "title" . }} {{.String.Title}} {{end}}</title>
+    <link rel="stylesheet" href="/assets/css/main.css"><!--
+        <script defer src="/__/firebase/4.6.2/firebase-app.js"></script>
+        <script defer src="/__/firebase/4.6.2/firebase-auth.js"></script>
+        <script defer src="/__/firebase/4.6.2/firebase-database.js"></script>
+        <script defer src="/__/firebase/4.6.2/firebase-messaging.js"></script>
+        <script defer src="/__/firebase/4.6.2/firebase-storage.js"></script>
+        <script defer src="/__/firebase/init.js"></script>-->
+</head>
+<body>
+{{ template "part/header" . }}
+<main>{{- block "main" . }} {{ end }}</main>
+{{ template "part/footer" . }}
+<script async src="/assets/js/bundle.js"></script>
+</body>
+</html>
+

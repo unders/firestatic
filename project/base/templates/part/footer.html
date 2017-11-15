@@ -1,0 +1,7 @@
+{{- define "part/footer" -}}
+<footer>
+    {{- range .Array.Footer }}
+        <a href="{{.URL}}" title="{{.Name}}">{{.Name}}</a>
+    {{- end }}
+</footer>
+{{ end }}
