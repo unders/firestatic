@@ -1,7 +1,7 @@
 PROJECT :=project/base
 THEME :=autumn
 
-GITTAG :=v0.0.2
+GITTAG :=v0.0.3
 
 BUILDSTAMP :=$(shell date -u '+%Y-%m-%dT%I:%M%p')
 GITHASH :=$(shell git rev-parse HEAD)
