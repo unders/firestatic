@@ -14,7 +14,7 @@ deploy: ## deploy website to firebase project: firestatic-base
 
 
 .PHONY: check
-check: ## check deployed website
-	curl -i https://firestatic-base.firebaseapp.com/
-	curl -i https://firestatic-base.firebaseapp.com/404-not-there
-	curl -i https://firestatic-base.firebaseapp.com/deployed-version.txt
+check: ## check the deployed website
+	curl -i https://$(PROJECT).firebaseapp.com/
+	curl -i https://$(PROJECT).firebaseapp.com/404-not-there
+	curl -i https://$(PROJECT).firebaseapp.com/deployed-version.txt

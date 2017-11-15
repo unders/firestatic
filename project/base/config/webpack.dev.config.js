@@ -1,7 +1,7 @@
 module.exports = {
     entry: "./src/autumn/main.ts",
     output: {
-        filename: "./websites/base/assets/js/bundle.js"
+        filename: "./websites/assets/js/bundle.js"
     },
 
     // Enable sourcemaps for debugging webpack's output.

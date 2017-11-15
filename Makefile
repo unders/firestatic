@@ -1,17 +1,17 @@
-PROJECT :=base
+PROJECT :=project/base
 THEME :=autumn
 
 GITTAG :=v0.0.2
 
 BUILDSTAMP :=$(shell date -u '+%Y-%m-%dT%I:%M%p')
 GITHASH :=$(shell git rev-parse HEAD)
-VERSION := project/$(PROJECT)/config/deployed-version.txt
-PREVIOUS := project/$(PROJECT)/config/deployed-previous.txt
-DEPLOYED_VERSION := project/$(PROJECT)/public/deployed-version.txt
+VERSION := $(PROJECT)/config/deployed-version.txt
+PREVIOUS := $(PROJECT)/config/deployed-previous.txt
+DEPLOYED_VERSION := $(PROJECT)/public/deployed-version.txt
 
 .PHONY: help
 help:
-	@echo "   - project: $(PROJECT); theme: $(THEME) -"
+	@echo " - project dir: $(PROJECT); theme: $(THEME) -"
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | \
 	awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
@@ -25,18 +25,19 @@ install: ## installs dependencis
 
 .PHONY: start
 start: ## start dev environment
-	@modd -f project/$(PROJECT)/config/modd.dev.conf
+	@modd -f $(PROJECT)/config/modd.dev.conf
 
 .PHONY: release
 release: ## create a release
 	@cp support/env.prod.ts src/env/env.ts
-	@rm -rf project/$(PROJECT)/public
-	@rsync -avz --delete --exclude 'assets/css' --exclude 'assets/js' websites/$(PROJECT)/ project/$(PROJECT)/public
-	@node_modules/.bin/node-sass --output-style compressed --output ./project/$(PROJECT)/public/assets/css ./sass/$(THEME)
-	@node_modules/.bin/webpack --config project/$(PROJECT)/config/webpack.dev.config.js
-	@node_modules/.bin/webpack --config project/$(PROJECT)/config/webpack.prod.config.js
+	@rm -rf $(PROJECT)/public
+	@./bin/clean.sh $(PROJECT)
+	@rsync -avz --delete --exclude 'assets/css' --exclude 'assets/js' websites/ $(PROJECT)/public
+	@node_modules/.bin/node-sass --output-style compressed --output ./$(PROJECT)/public/assets/css ./sass/$(THEME)
+	@node_modules/.bin/webpack --config $(PROJECT)/config/webpack.dev.config.js
+	@node_modules/.bin/webpack --config $(PROJECT)/config/webpack.prod.config.js
 	@./bin/hasher.sh $(PROJECT)
-	@cp $(VERSION)  $(PREVIOUS)
+	@cp $(VERSION) $(PREVIOUS)
 	@echo tag:$(GITTAG) time:$(BUILDSTAMP) githash:$(GITHASH) project:$(PROJECT) theme:$(THEME) > $(VERSION)
 	@cp $(VERSION) $(DEPLOYED_VERSION)
 	@cp support/env.dev.ts src/env/env.ts

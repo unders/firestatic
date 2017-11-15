@@ -2,7 +2,7 @@ const path = require('path');
 const ClosureCompilerPlugin = require('webpack-closure-compiler');
 
 module.exports = {
-    entry: './websites/base/assets/js/bundle.js',
+    entry: './websites/assets/js/bundle.js',
     output: {
         path: path.resolve('./project/base/public/assets/js'),
         filename: 'bundle.js'

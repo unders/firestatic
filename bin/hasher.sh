@@ -53,8 +53,8 @@ renameFiles() {
 main() {
     local project=$1
 
-    updateFiles project/${project}/public
-    renameFiles project/${project}/public
+    updateFiles ${project}/public
+    renameFiles ${project}/public
 }
 
 main $@
