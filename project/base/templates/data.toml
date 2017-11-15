@@ -10,7 +10,7 @@ path = "/"
 Filename = "main.html"
 
 [[Layouts]]
-# This layout will be used for pages in subfolders to: page/error/
+# This layout is used for 404.html page
 path = "/404.html"
 Filename = "error.html"
 
