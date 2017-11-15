@@ -1,45 +1,45 @@
 #!/usr/bin/env bash
 ##
-## hasher adds the hash of the content to the filename
+## hasher adds the hash of the content to the filename of each asset file, i.e.
+## when a file change also its filename change witch makes the file chachable.
 ##
+updateFile() {
+    local file=$1
+    local public=$2
+    local assets=${public}/assets
 
-function update() {
-    local public=$1
-    local old=$2
-    local new=$3
-
-    for file in $(find ${public});
+    for asset in $(find ${assets});
     do
-        if [ -f "$file" ];then
-            if [[ ${file} =~ (.*)\.(gif|png|jpg|xml|json|ico)$ ]]; then
-                # we should not update these files
-                continue
-            fi
-            sed -i oldx "s|$old|$new|g" ${file}
-            rm ${file}oldx
-        fi
-    done
-}
-
-function updateFiles() {
-    local public=$1
-
-    for file in $(find ${public}/assets);
-    do
-        if [ -f "$file" ];then
-            local hash=$(openssl sha1 ${file} | awk '{print $2}')
-            local path=${file#*${public}/}
+        if [ -f "$asset" ];then
+            local hash=$(openssl sha1 ${asset} | awk '{print $2}')
+            local path=${asset#*${public}/}
             local base=$(basename ${path})
             local dir=$(dirname ${path})
-            update ${public} ${path} "$dir/$hash-$base"
+
+            local old=${path}
+            local new="$dir/$hash-$base"
+
+            sed -i orig "s|$old|$new|g" ${file}
+            rm ${file}orig
         fi
     done
 }
 
-renameFiles() {
+updateHTMLFiles() {
     local public=$1
 
-    for file in $(find ${public}/assets);
+    for file in $(find ${public}/*.html);
+    do
+        if [ -f "$file" ]; then
+            updateFile ${file} ${public}
+        fi
+    done
+}
+
+renameAssets() {
+    local assets=$1
+
+    for file in $(find ${assets});
     do
         if [ -f "$file" ];then
             local hash=$(openssl sha1 ${file} | awk '{print $2}')
@@ -52,9 +52,13 @@ renameFiles() {
 
 main() {
     local project=$1
+    local public=${project}/public
+    local assets=${public}/assets
 
-    updateFiles ${project}/public
-    renameFiles ${project}/public
+    updateFile ${assets}/js/bundle.js ${public}
+    updateFile ${assets}/css/main.css ${public}
+    updateHTMLFiles ${public}
+    renameAssets ${assets}
 }
 
 main $@

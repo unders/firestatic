@@ -3,6 +3,8 @@ Firestatic is used for:
 * Developing static HTML websites, and
 * Deploying them to the firebase hosting platform
 
+## TODO
+ * [ X ] Fix bin/hasher.sh: The ordering must change: images, CSS, JS, and finally HTML files.
 
 ## Setup
 
