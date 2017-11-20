@@ -1,4 +1,5 @@
 PROJECT :=project/base
+IMAGE_DIR :=$(PROJECT)/assets/image
 THEME :=autumn
 
 GITTAG :=v0.0.3
@@ -17,8 +18,11 @@ help:
 
 .PHONY: install
 install: ## installs dependencis
+	## Install: https://imageoptim.com/mac
 	## go get github.com/cortesi/modd/cmd/modd
+	## brew install imagemagick graphicsmagick
 	## brew install openssl
+	## npm install -g imageoptim-cli
 	## npm install -g typescript
 	## npm install -g firebase-tools
 	npm install
@@ -45,6 +49,10 @@ release: ## create a release
 .PHONY: tree
 tree: ## lists the file structure
 	@tree -I 'dist|node_modules|build|'
+
+.PHONY: images
+images: ## compress images
+	imageOptim --directory $(IMAGE_DIR) --quit --verbose
 
 .PHONY: log
 log: ## show git log
