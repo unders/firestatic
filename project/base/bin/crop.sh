@@ -24,8 +24,8 @@ main() {
     dir=$1
 
     toDimension ${dir}
-    toThumb ${dir}
+    ## toThumb ${dir}
 }
 
-main testdir
+main project/base/assets/image
 

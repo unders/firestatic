@@ -7,22 +7,21 @@ compress_all() {
 }
 
 main() {
-    images=$1
+    dir=$1
 
-    compress_all ${images}
-    convert testdir/design_crop.jpg -quality 60 testdir/design_max.jpg
-    convert testdir/design_crop.jpg -quality 60 testdir/design_max.webp
+    convert ${dir}/design_crop.jpg -quality 60 -resize 13% ${dir}/design_max.jpg
+    convert ${dir}/design_crop.jpg -quality 60 -resize 13% ${dir}/design_max.webp
 
-    convert testdir/design_crop.jpg -quality 60 -resize 50% testdir/design_medium.jpg
-    convert testdir/design_crop.jpg -quality 60 -resize 50% testdir/design_medium.webp
+    convert ${dir}/hosting_crop.jpg -quality 60 -resize 20% ${dir}/hosting_max.jpg
+    convert ${dir}/hosting_crop.jpg -quality 60 -resize 20% ${dir}/hosting_max.webp
 
-    convert testdir/design_crop.jpg -quality 60 -resize 40% testdir/design_min.jpg
-    convert testdir/design_crop.jpg -quality 60 -resize 40% testdir/design_min.webp
+    convert ${dir}/develop_crop.jpg -quality 60 -resize 22% ${dir}/develop_max.jpg
+    convert ${dir}/develop_crop.jpg -quality 60 -resize 22% ${dir}/develop_max.webp
 
-    compress_all ${images}
+    compress_all ${dir}
 }
 
-main testdir
+main project/base/assets/image
 
 
 # Images
@@ -33,7 +32,10 @@ main testdir
 #   * develop.jpg - w:h = 3000:2002
 #
 # Image Size:
-#            300px:200px
+#            213px:142px
+#            310px:205px
+#            365px:243px
+#            650px:433px (develop)
 #
 ### Crop (ratio 1.5):
 #   * hosting_crop.jpg - w:h = 2000:1333

@@ -1,4 +1,5 @@
 @import '../maxwidth';
+@import '../space';
 
 //
 //       CONSTANTS
@@ -137,5 +138,17 @@ $breakpoint-max: 60rem;
       justify-self: center;
       grid-column: 6 / span 1;
     }
+  }
+
+  //
+  // FOOTER GRID
+  //
+  footer {
+    @include pa2();
+    margin-top: 40px;
+  }
+
+  .footer-container {
+    @include max-width($max-width);
   }
 }

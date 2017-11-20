@@ -12,4 +12,4 @@ main() {
     done
 }
 
-main testdir
+main project/base/assets/image

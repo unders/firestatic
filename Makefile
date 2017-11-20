@@ -1,5 +1,4 @@
 PROJECT :=project/base
-IMAGE_DIR :=$(PROJECT)/assets/image
 THEME :=autumn
 
 GITTAG :=v0.0.3
@@ -50,9 +49,17 @@ release: ## create a release
 tree: ## lists the file structure
 	@tree -I 'dist|node_modules|build|'
 
-.PHONY: images
-images: ## compress images
-	imageOptim --directory $(IMAGE_DIR) --quit --verbose
+.PHONY: crop
+crop: ## crop images
+	$(PROJECT)/bin/crop.sh
+
+.PHONY: convert
+convert: ## convert and compress images
+	$(PROJECT)/bin/convert.sh
+
+.PHONY: identify
+identify: ## show image dimensions
+	$(PROJECT)/bin/identify.sh
 
 .PHONY: log
 log: ## show git log
