@@ -1,0 +1,17 @@
+@supports (display: grid) {
+  header {
+    grid-area: hd;
+  }
+  main {
+    grid-area: main;
+  }
+  footer {
+    grid-area: ft;
+  }
+  .container {
+    display: grid;
+    grid-template-areas: "hd" "main" "ft";
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+  }
+}

@@ -1,7 +1,23 @@
+@import "./layout";
 @import "../space";
 
 body {
-  @include pa1();
-  background: green;
+  // background: green;
   margin: 0;
+  background-image: url("/assets/image/landing.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+header {
+  @include ph1();
+}
+
+main {
+  @include ph1();
+}
+
+footer {
+  @include ph1();
 }
