@@ -1,23 +1,62 @@
 @import "./layout";
 @import "../space";
+@import "../font";
+
+//
+// RESET
+//
+figure {
+  margin:0;
+}
+
 
 body {
-  // background: green;
+  background: #FFFFFF;
+  font-size: 20px;
   margin: 0;
-  background-image: url("/assets/image/landing.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
 }
 
+//
+//  HEADER
+//
 header {
-  @include ph1();
+  background:#856FC5;
+  color: #DED5FB;
 }
 
-main {
-  @include ph1();
+.header-logo-company {
+  color: #FFFCFF;
 }
 
+.header-nav a {
+  color: #DED5FB;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.header-nav a:hover {
+  color: #FFFCFF;
+}
+
+
+//
+//  MAIN
+//
+
+//
+// SERVICES
+//
+.service p {
+  font-size: 14px;
+}
+
+.service-image {
+  background: darken(#FFFFFF, 2%);
+}
+
+//
+//  FOOTER
+//
 footer {
   @include ph1();
 }

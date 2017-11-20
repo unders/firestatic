@@ -1,4 +1,20 @@
+@import '../maxwidth';
+
+//
+//       CONSTANTS
+//
+$max-width: 64rem; // 60rem x 20px = 1260px
+$gutter: 1rem;
+$breakpoint-medium: 48rem;
+$breakpoint-max: 60rem;
+
+//
+// A MOBILE FIRST GRID
+//
 @supports (display: grid) {
+  //
+  // PAGE GRID
+  //
   header {
     grid-area: hd;
   }
@@ -11,7 +27,115 @@
   .container {
     display: grid;
     grid-template-areas: "hd" "main" "ft";
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 300px auto auto;
     height: 100vh;
+  }
+
+  //
+  // HEADER GRID
+  //
+  .header-container {
+    @include max-width($max-width);
+    display: grid;
+    grid-template-columns: $gutter auto $gutter;
+    grid-template-rows: 60px auto 40px 20px;
+  }
+  .header-logo {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    justify-self: center;
+    align-self: center;
+  }
+  .header-logo-company, .header-logo-slogan {
+    text-align:center
+  }
+  .header-nav {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+    align-self: end;
+  }
+
+  //
+  // HEADER-NAV FLEXBOX
+  //
+  .header-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  //
+  // MAIN SERVICES
+  //
+  .service-container {
+    @include max-width($max-width);
+    display: grid;
+    grid-template-columns: $gutter auto $gutter;
+    grid-template-rows: auto auto auto;
+  }
+
+  .service-design {
+    justify-self: center;
+    grid-column: 2 / span 1;
+  }
+  .service-hosting {
+    justify-self: center;
+    grid-column: 2 / span 1;
+  }
+  .service-development {
+    justify-self: center;
+    grid-column: 2 / span 1;
+  }
+  .service {
+    margin-top: 60px;
+    text-align: center;
+  }
+  .service-image {
+    max-width: 50%;
+  }
+
+  @media only screen and (min-width: $breakpoint-medium) {
+    .service-container {
+      @include max-width($max-width);
+      display: grid;
+      grid-template-columns: $gutter 1fr 40px 1fr $gutter;
+      grid-template-rows: auto auto;
+    }
+
+    .service-image {
+      max-width: 70%;
+    }
+    .service-design {
+      grid-column: 2 / span 1;
+    }
+    .service-hosting {
+      grid-column: 4 / span 1;
+    }
+    .service-development {
+      justify-self: center;
+      grid-column: 2 / span 3;
+    }
+  }
+
+  @media only screen and (min-width: $breakpoint-max) {
+    .service-container {
+      @include max-width($max-width);
+      display: grid;
+      grid-template-columns: $gutter 1fr 40px 1fr 40px 1fr $gutter;
+    }
+
+    .service-image {
+      max-width: 70%;
+    }
+
+    .service-design {
+      grid-column: 2 / span 1;
+    }
+    .service-hosting {
+      grid-column: 4 / span 1;
+    }
+    .service-development {
+      justify-self: center;
+      grid-column: 6 / span 1;
+    }
   }
 }

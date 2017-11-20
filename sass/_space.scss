@@ -3,6 +3,12 @@
   padding-bottom: 1rem;
 }
 
+@mixin ph1() {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
 @mixin pa1() {
   padding: 1rem 1rem;
 }
+
