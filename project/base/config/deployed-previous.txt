@@ -1,1 +1,1 @@
-tag:v0.0.5 time:2017-11-20T02:01pm githash:960d2ca5298da89588b46b077e3d875af1cce53d project:project/base theme:autumn
+tag:v0.0.6 time:2017-11-20T02:27pm githash:faa3098960cf2d949ef01f7e51c84e727ea92943 project:project/base theme:autumn
