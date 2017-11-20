@@ -24,9 +24,9 @@ Filename = "error.html"
 #
 # Add your own string values here:
 [String]
-Title = "Firestatic Base Project"
-Title_Index = "Index | Firestatic Base Project"
-Title_404 = "Page Not Found | Firestatic Base Project"
+Title = "Provider"
+Title_Index = "Provider"
+Title_404 = "Page Not Found | Provider"
 
 
 
@@ -47,9 +47,9 @@ Title_404 = "Page Not Found | Firestatic Base Project"
     URL = "/"
 
 [[Array.Header]]
-    Name = "About"
-    URL = "/about"
+    Name = "Contact"
+    URL = "/contact"
 
 [[Array.Footer]]
-    Name = "Firestatic Base Project"
+    Name = "Provider"
     URL = "/"

@@ -15,9 +15,11 @@
         <script defer src="/__/firebase/init.js"></script>-->
 </head>
 <body>
-{{ template "part/header" . }}
-<main>{{- block "main" . }} {{ end }}</main>
-{{ template "part/footer" . }}
+<div class="container">
+    <header>{{ template "part/header" . }}</header>
+    <main>{{- block "main" . }} {{ end }}</main>
+    <footer>{{ template "part/footer" . }}</footer>
+</div>
 <script async src="/assets/js/bundle.js"></script>
 </body>
 </html>

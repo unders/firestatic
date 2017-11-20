@@ -1,11 +1,34 @@
 {{ define "title" }}{{.String.Title_Index}}{{ end }}
 {{ define "main" }}
-    <div>
-        <p>Company X - Creates your online presence</p>
-        <p>Services (Web Design, Hosting, Application Development)</p>
-        <p>Contact (Your name, Company, Email, Phone, How can we help you?, Send Message)</p>
+    <div id="services" class="service-container">
+        <div class="service-design service">
+            <figure>
+                <img src="/assets/image/design.jpg" alt="design" class="service-image">
+            </figure>
+            <h3>Design</h3>
+            <p>
+                We offer professional quality websites at a
+                competitive price. — no hassles
+            </p>
+        </div>
+        <div class="service-hosting service">
+            <figure>
+                <img src="/assets/image/hosting.jpg" alt="hosting" class="service-image">
+            </figure>
+            <h3>Hosting</h3>
+            <p>
+                We offer a safe, secure and redundant hosting solution that will
+                keep you website running smoothly. — No matter the traffic
+            </p>
+        </div>
+        <div class="service-development service">
+            <figure>
+                <img src="/assets/image/develop.jpg" alt="development" class="service-image">
+            </figure>
+            <h3>Development</h3>
+            <p>
+                We offer technology solutions for your business or company. — Quick and easy
+            </p>
+        </div>
     </div>
-
-    <a href="https://unied.com/">Unied - landing page</a></br>
-    <a href="https://www.varvet.com/contact/">Varvet - Contact Form</a>
 {{ end }}

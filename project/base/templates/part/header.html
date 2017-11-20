@@ -1,6 +1,13 @@
 {{- define "part/header" -}}
-    {{- range .Array.Header }}
-        <a href="{{.URL}}" title="{{.Name}}">{{.Name}}</a>
-    {{- end }}
+<div class="header-container">
+    <div class="header-logo">
+        <h1 class="header-logo-company">Provider</h1>
+        <p class="header-logo-slogan">Takes care of your online presence</p>
+    </div>
+    <div class="header-nav">
+        <a href="/#services">Services</a>
+        <a href="/contact#contact">Contact</a>
+    </div>
+</div>
 {{ end -}}
 
