@@ -87,11 +87,12 @@ $breakpoint-max: 60rem;
     grid-column: 2 / span 1;
   }
   .service {
+    max-width: 510px;
     margin-top: 60px;
     text-align: center;
   }
   .service-image {
-    max-width: 50%;
+    max-width: 300px;
   }
 
   @media only screen and (min-width: $breakpoint-medium) {
