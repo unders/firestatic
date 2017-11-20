@@ -28,7 +28,7 @@ $breakpoint-max: 60rem;
   .container {
     display: grid;
     grid-template-areas: "hd" "main" "ft";
-    grid-template-rows: 300px auto auto;
+    grid-template-rows: 300px auto 40px;
     height: 100vh;
   }
 
@@ -62,6 +62,13 @@ $breakpoint-max: 60rem;
   .header-nav {
     display: flex;
     justify-content: space-between;
+  }
+
+  //
+  // MAIN
+  //
+  main {
+    margin-bottom: 40px;
   }
 
   //
@@ -145,8 +152,6 @@ $breakpoint-max: 60rem;
   // FOOTER GRID
   //
   footer {
-    @include pa2();
-    margin-top: 40px;
   }
 
   .footer-container {
