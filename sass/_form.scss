@@ -1,0 +1,76 @@
+// md-form
+//
+@mixin md-form($bg-form, $bg-form-hover,
+               $label-color, $label-color-focus,
+               $border-color, $border-color-focus,
+               $error-color) {
+  form > .form-field {
+    position: relative;
+  }
+  form > .form-field > label {
+    color: $label-color;
+    font-weight: 400;
+    font-size: 18px;
+    position: absolute;
+    top: 0;
+    margin-top: -4px;
+  }
+  input:focus + label,
+  textarea:focus + label {
+    color: $label-color-focus;
+    margin-top: -20px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .form-field.has-value label {
+    margin-top: -20px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px $bg-form inset;
+  }
+  form:hover {
+    background: $bg-form-hover;
+
+    input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 1000px $bg-form-hover inset;
+    }
+  }
+
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    display: block;
+    outline: none;
+    resize: none;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid $border-color;
+
+    &:focus {
+      border-color: $border-color-focus;
+    }
+  }
+
+  //
+  // ERROR
+  //
+  .form-field.error label {
+    color: $error-color;
+  }
+
+  .form-field.error input,
+  .form-field.error textarea {
+    border-bottom: 1px solid $error-color;
+  }
+
+  .form-field .error {
+    color: $error-color;
+    font-size: 14px;
+  }
+}
+

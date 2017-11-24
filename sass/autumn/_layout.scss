@@ -6,8 +6,10 @@
 //
 $max-width: 64rem; // 60rem x 20px = 1260px
 $gutter: 1rem;
+$breakpoint-small: 33rem;
 $breakpoint-medium: 48rem;
 $breakpoint-max: 60rem;
+
 
 //
 // A MOBILE FIRST GRID
@@ -67,9 +69,6 @@ $breakpoint-max: 60rem;
   //
   // MAIN
   //
-  main {
-    margin-bottom: 40px;
-  }
 
   //
   // MAIN SERVICES
@@ -79,6 +78,7 @@ $breakpoint-max: 60rem;
     display: grid;
     grid-template-columns: $gutter auto $gutter;
     grid-template-rows: auto auto auto;
+    padding-bottom: 40px;
   }
 
   .service-design {
@@ -147,6 +147,55 @@ $breakpoint-max: 60rem;
       grid-column: 6 / span 1;
     }
   }
+
+  //
+  // MAIN Contact
+  //
+  .contact-container {
+    height: 100%;
+  }
+  .contact-width {
+    @include max-width(45rem);
+  }
+  .contact-header {
+    margin: 0;
+    padding: 3rem 1rem 3rem 1rem;
+    text-align: center;
+  }
+  #contact-message {
+    height: 10rem;
+  }
+  .contact-form > .form-field {
+    margin: 40px 20px 40px 20px;
+  }
+
+  .contact-form footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .contact-form {
+    margin-bottom: 7rem;
+  }
+
+  @media only screen and (min-width: $breakpoint-small) {
+    .contact-form {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    .contact-form footer {
+      padding-right: 20px;
+    }
+
+    .contact-form > .form-field {
+      margin: 40px 40px 40px 40px;
+    }
+  }
+
 
   //
   // FOOTER GRID

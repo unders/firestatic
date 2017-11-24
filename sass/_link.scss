@@ -1,0 +1,24 @@
+//  link
+//
+// NOTE
+//            STATES => :link,  :visited,  :hover,  :active
+//
+//  Usage:
+//          @include nav-link($bg-color, $bg-selected-color);
+//
+@mixin nav-link($bg-color, $bg-selected-color) {
+  text-decoration: none;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    background: darken($bg-color, 5%);
+  }
+  &.selected {
+    background: $bg-selected-color;
+  }
+  &.selected:hover {
+    background: darken($bg-selected-color, 5%);
+  }
+}
+

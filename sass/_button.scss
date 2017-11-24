@@ -1,0 +1,93 @@
+// MATERIAL BUTTONS
+//
+// Doc: https://github.com/lucaspark/tacherial/blob/master/css/tachyons.css)
+//
+
+//
+// btn
+//
+.btn,
+.btn:link,
+.btn:visited {
+  position: relative;
+  border-radius: .25em;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+
+//
+// BUTTON TYPES:
+//                  - button
+//                  - flat
+//                  - raised
+
+
+//  button
+//
+// Usage:
+//          @include button($text-color, $bg-color);
+//
+@mixin button($text-color, $bg-color) {
+    color: $text-color;
+    background-color: $bg-color;
+    border: 0;
+
+    &:focus {
+      background-color: darken($bg-color, 3%);
+      outline:0;
+    }
+
+    &:link, &:visited {
+      color: $text-color;
+      background-color: $bg-color;
+    }
+
+    &:hover {
+      color: $text-color;
+      box-shadow: 2px 2px 8px 0 rgba( 0, 0, 0, .2 );
+    }
+
+    &:active {
+      color: $text-color;
+      background-color: $bg-color;
+  }
+}
+
+//  button-flat
+//
+//  Usage:
+//          @include button-flat($text-color, $bg-color);
+//
+@mixin button-flat($text-color, $bg-color) {
+  color: $text-color;
+    background-color: $bg-color;
+    border: 0;
+
+    &:focus { outline: auto; }
+    &:hover { background: darken($bg-color, 3%); }
+}
+
+
+// button-raised
+//
+//  Usage:
+//          @include button-raised($bg-color);
+//
+
+@mixin button-raised($bg-color) {
+  box-shadow: 2px 2px 8px 0 rgba( 0, 0, 0, .2 );
+
+  &:link, &:visited {
+    box-shadow: 2px 2px 8px 0 rgba( 0, 0, 0, .2 );
+  }
+
+  &:hover {
+    box-shadow: 4px 4px 8px 0 rgba( 0, 0, 0, .2 );
+  }
+}
+
+

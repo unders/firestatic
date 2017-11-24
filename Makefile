@@ -36,6 +36,7 @@ release: ## create a release
 	@rm -rf $(PROJECT)/public
 	@./bin/clean.sh $(PROJECT)
 	@rsync -avz --delete --exclude 'assets/css' --exclude 'assets/js' websites/ $(PROJECT)/public
+	@cp -R $(PROJECT)/assets/css/ $(PROJECT)/public/assets
 	@node_modules/.bin/node-sass --output-style compressed --output ./$(PROJECT)/public/assets/css ./sass/$(THEME)
 	@node_modules/.bin/webpack --config $(PROJECT)/config/webpack.dev.config.js
 	@node_modules/.bin/webpack --config $(PROJECT)/config/webpack.prod.config.js

@@ -1,6 +1,9 @@
 @import "./layout";
-@import "../space";
+@import "./palette";
 @import "../font";
+@import "../button";
+@import "../ripple";
+@import "../form";
 
 //
 // RESET
@@ -9,9 +12,8 @@ figure {
   margin:0;
 }
 
-
 body {
-  background: #FFFFFF;
+  background: $bg_body;
   font-size: 20px;
   margin: 0;
 }
@@ -20,22 +22,22 @@ body {
 //  HEADER
 //
 header {
-  background:#856FC5;
-  color: #DED5FB;
+  background: $bg-header;
+  color: $text-header-secondary;
 }
 
 .header-logo-company {
-  color: #FFFCFF;
+  color: $text-header-primary;
 }
 
 .header-nav a {
-  color: #DED5FB;
+  color: $text-header-secondary;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 .header-nav a:hover {
-  color: #FFFCFF;
+  color: $text-header-primary;
 }
 
 
@@ -44,14 +46,37 @@ header {
 //
 
 //
-// SERVICES
+// MAIN SERVICES PAGE
 //
 .service p {
   font-size: 14px;
 }
 
 .service-image {
-  background: darken(#FFFFFF, 2%);
+  background: darken($bg_body, 2%);
+}
+
+// MAIN CONTACT PAGE
+@include md-form(darken($bg-body-light, 1%), $bg-body-light,
+               lighten($text-body-secondary, 20%), $accent-color,
+               $divider-color, $accent-color,
+               $error-color);
+
+.contact-header {
+  font-size: 20px;
+  font-weight: 400;
+}
+.contact-form {
+  font-weight: 300;
+  background: darken($bg-body-light, 1%);
+  border: $border;
+  border-radius: 3px;
+}
+
+.contact-form footer .btn {
+  padding: 10px;
+  @include button-flat($text-accent-color, $bg-body);
+  @include ripple();
 }
 
 //

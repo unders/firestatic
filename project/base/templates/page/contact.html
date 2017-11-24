@@ -1,5 +1,24 @@
 {{ define "title" }}{{.String.Title_Index}}{{ end }}
 {{ define "main" }}
-    <div> This is the contact page</div>
+    <div id="contact-form" class="contact-container">
+        <div class="contact-width">
+            <h2 class="contact-header">Ready for a change? Let’s get in touch.</h2>
+            <form action="#" data-action="contactForm" class="contact-form" novalidate>
+                <div class="form-field">
+                    <input id="contact-email" required type="email" />
+                    <label for="contact-email">Your Email</label>
+                    <span class="error invisible">visibility:hidden</span>
+                </div>
+                <div class="form-field">
+                    <textarea id="contact-message" required minlength="5"></textarea>
+                    <label for="contact-message">How can we help you?</label>
+                    <span class="error invisible">visibility:hidden</span>
+                </div>
+                <footer>
+                    <button class="btn" type="submit">Send Message</button>
+                </footer>
+            </form>
+        </div>
+    </div>
 {{ end }}
 

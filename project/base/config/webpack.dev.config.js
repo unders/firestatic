@@ -30,6 +30,7 @@ module.exports = {
     // This is important because it allows us to avoid bundling all of our
     // dependencies, which allows browsers to cache those libraries between builds.
     // externals: {
+        // "hyperhtml": "hyperhtml"
         // "firebase": "firebase"
         // "react": "React",
         // "react-dom": "ReactDOM"

@@ -10,7 +10,7 @@ module.exports = {
     plugins: [
         new ClosureCompilerPlugin({
             compiler: {
-                language_in: 'ECMASCRIPT5_STRICT', // 'ECMASCRIPT6',
+                language_in: 'ECMASCRIPT6', //'ECMASCRIPT5_STRICT', hyperhtml uses ESMACSCRIPT6 syntax.
                 language_out: 'ECMASCRIPT5_STRICT', // IE11, EDGE15, 98%
                 compilation_level: 'SIMPLE', // WHITESPACE_ONLY, SIMPLE, ADVANCED (default: SIMPLE)
                 warning_level: 'verbose',
