@@ -57,6 +57,7 @@ main() {
 
     updateFile ${assets}/js/bundle.js ${public}
     updateFile ${assets}/css/main.css ${public}
+    updateFile ${project}/firebase.json ${public}
     updateHTMLFiles ${public}
     renameAssets ${assets}
 }

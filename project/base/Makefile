@@ -18,3 +18,7 @@ check: ## check the deployed website
 	curl -i https://$(PROJECT).firebaseapp.com/
 	curl -i https://$(PROJECT).firebaseapp.com/404-not-there
 	curl -i https://$(PROJECT).firebaseapp.com/deployed-version.txt
+
+.PHONY: version
+version: ## check version of deployed website
+	curl https://$(PROJECT).firebaseapp.com/deployed-version.txt
