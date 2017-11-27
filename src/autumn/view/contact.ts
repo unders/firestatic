@@ -207,7 +207,7 @@ export class Contact {
             headerClass = `${headerClass} ${css.error}`;
         }
 
-        let nameField = css.formField + " clearfix";
+        let nameField = css.formField;
         if (s.name.hasValue) {
             nameField = `${nameField} ${css.hasValue}`;
         }
