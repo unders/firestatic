@@ -61,7 +61,8 @@
   // ERROR
   //
   .form-field.error label {
-    color: $error-color;
+    // Remove comment if you want error label.
+    //color: $error-color;
   }
 
   .form-field.error input,
