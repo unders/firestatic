@@ -18,13 +18,13 @@
   input:focus + label,
   textarea:focus + label {
     color: $label-color-focus;
-    margin-top: -20px;
+    margin-top: -28px;
     font-size: 14px;
     font-weight: 400;
   }
 
   .form-field.has-value label {
-    margin-top: -20px;
+    margin-top: -28px;
     font-size: 14px;
     font-weight: 400;
   }

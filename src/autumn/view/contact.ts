@@ -1,10 +1,13 @@
 import { bind } from "../../dom/dom";
 import { css } from "../../css/css";
 
+const nameID = "contact-name";
 const emailID = "contact-email";
 const messageID = "contact-message";
 
 interface Data {
+    name: string;
+    inputName: HTMLInputElement;
     email: string;
     inputEmail: HTMLInputElement;
     message: string;
@@ -12,11 +15,17 @@ interface Data {
 }
 interface State {
     submit: Submit;
+    name: Name;
     email: Email;
     message: Message;
 }
 interface Submit {
     disable: boolean;
+}
+interface Name {
+    valid: boolean;
+    hasValue: boolean;
+    valueMissing: boolean; // no text
 }
 interface Email {
     valid: boolean;
@@ -42,6 +51,7 @@ interface ValidityResult {
 function initState(): State {
     return {
         submit: { disable: false },
+        name: { valid: true, valueMissing: false, hasValue: false },
         email: { valid: true, valueMissing: false, typeMismatch: false, hasValue: false },
         message: { valid: true, valueMissing: false, tooShort: false, hasValue: false },
     }
@@ -62,6 +72,11 @@ export class Contact {
         }
     }
     private static trim(form: HTMLFormElement): Data {
+        const nameInput = form[nameID] as HTMLInputElement;
+        const name = nameInput.value.trim();
+        nameInput.value = "x"; // A bug in Chrome.
+        nameInput.value = name;
+
         const emailInput = form[emailID] as HTMLInputElement;
         const email = emailInput.value.trim();
         emailInput.value = "x"; // A bug in Chrome.
@@ -72,6 +87,8 @@ export class Contact {
         messageInput.value = msg;
 
         return {
+            name: name,
+            inputName: nameInput,
             email: email,
             inputEmail: emailInput,
             message: msg,
@@ -86,6 +103,15 @@ export class Contact {
         if (form.checkValidity()) {
             return { data: data, focusID: "", valid: true };
         }
+
+        const inputName = data.inputName;
+        const name = data.name;
+        const nameIsValid =  inputName.validity.valid;
+        this.state.name = {
+            hasValue: (name.length !== 0),
+            valid: nameIsValid,
+            valueMissing: inputName.validity.valueMissing,
+        };
 
         const inputEmail = data.inputEmail;
         const email = data.email;
@@ -106,9 +132,14 @@ export class Contact {
             tooShort: (inputMessage.validity as tooShort).tooShort
         };
 
-        let focusID = emailID;
-        if (emailIsValid) {
-            focusID = messageID;
+        let focusID = messageID;
+        switch (false) {
+            case nameIsValid:
+                focusID = nameID;
+                break;
+            case emailIsValid:
+                focusID = emailID;
+                break;
         }
 
         return { data: data, focusID: focusID, valid: false };
@@ -121,6 +152,11 @@ export class Contact {
         }
         const el = e.target as HTMLInputElement;
         switch (el.id) {
+            case nameID:
+                const name = initState().name;
+                name.hasValue = (el.value.length !== 0);
+                this.state.name = name;
+                return true;
             case emailID:
                 const email = initState().email;
                 email.hasValue = (el.value.length !== 0);
@@ -149,6 +185,20 @@ export class Contact {
         if (this.notAttached) { return ""; }
 
         const s = this.state;
+
+        let nameField = css.formField;
+        if (s.name.hasValue) {
+            nameField = `${nameField} ${css.hasValue}`;
+        }
+        let nameErrorSpace = `${css.error} ${css.invisible}`;
+        let nameMissing = `${css.error} ${css.hidden}`;
+        if (!s.name.valid) {
+            nameField = `${nameField} ${css.error}`;
+            nameErrorSpace = `${css.error} ${css.hidden}`;
+            if (s.name.valueMissing) {
+                nameMissing = `${css.error} ${css.show}`;
+            }
+        }
 
         let emailField = css.formField;
         if (s.email.hasValue) {
@@ -184,20 +234,26 @@ export class Contact {
     <div class="contact-width">
         <h2 class="contact-header">Ready for a change? Let’s get in touch.</h2>
         <form action="#" data-action="contactForm" class="contact-form" novalidate>
+            <div class="${nameField}">
+                <input id="${nameID}" tabindex="1" data-action="contactInput" required type="text"/>
+                <label for="${nameID}">Name</label>
+                <span class="${nameErrorSpace}">visibility:hidden</span>
+                <span class="${nameMissing}">we need your name</span>
+            </div>
             <div class="${emailField}">
-                <input id="${emailID}" tabindex="1" data-action="contactInput" required type="email"/>
-                <label for="${emailID}">Your Email</label>
+                <input id="${emailID}" tabindex="2" data-action="contactInput" required type="email"/>
+                <label for="${emailID}">Email</label>
                 <span class="${emailErrorSpace}">visibility:hidden</span>
                 <span class="${emailTypeMismatch}">we need your email</span>
             </div>
             <div class="${messageField}">
-                <textarea id="${messageID}" tabindex="2" data-action="contactInput" required minlength="5"></textarea>
+                <textarea id="${messageID}" tabindex="3" data-action="contactInput" required minlength="5"></textarea>
                 <label for="${messageID}">How can we help you?</label>
                 <span class="${messageErrorSpace}">visibility:hidden</span>
                 <span class="${messageTooShort}">you need to write something</span>
             </div>
              <footer>
-                <button class="btn" tabindex="3" ype="submit" disabled="${disable}">Send Message</button>
+                <button class="btn" tabindex="4" ype="submit" disabled="${disable}">Send Message</button>
             </footer>
         </form>
     </div>`;
