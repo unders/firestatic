@@ -7,7 +7,7 @@
     <meta name="description" content="firestatic base template">
     <title>Provider</title>
     <link rel="stylesheet" href="/assets/css/5586b332170bffe0c4ccd8a7f73cf6b35e05cf20-reset.css">
-    <link rel="stylesheet" href="/assets/css/f67c4703a04f1b6dd5a34fa3f833ffb04dce9a16-main.css">
+    <link rel="stylesheet" href="/assets/css/6aa43ad8cca17cd4739474b2240e0e696d90d183-main.css">
 </head>
 <body>
 <div class="container">
@@ -30,8 +30,13 @@
                     Ready for a change? Let’s get in touch.
                 </h2>
                 <div class="form-field">
+                    <input id="contact-name" tabindex="1" data-action="contactInput" required type="text"/>
+                    <label for="contact-name">Name</label>
+                    <span class="error invisible">visibility:hidden</span>
+                </div>
+                <div class="form-field">
                     <input id="contact-email" required type="email" />
-                    <label for="contact-email">Your Email</label>
+                    <label for="contact-email">Email</label>
                     <span class="error invisible">visibility:hidden</span>
                 </div>
                 <div class="form-field">
