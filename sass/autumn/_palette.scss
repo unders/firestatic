@@ -20,12 +20,14 @@ $accent-color: #448AFF;
 
 $bg-header-dark: $primary-color-dark;
 $bg-header: $primary-color;
+$bg-header-light: $primary-color-light;
 $text-header-primary: $primary-color-text;
 $text-header-secondary: $primary-color-light;
 $icon-header: $primary-color-text;
 
 $bg-body-light: #FFFFFF;
 $bg_body: #F9F9F9;
+$bg_body-dark: darken(#F9F9F9, 1%);
 $text-body-primary: $primary-text-color;
 $text-body-secondary: $secondary-text-color;
 $icon-body: $secondary-text-color;

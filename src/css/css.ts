@@ -1,6 +1,7 @@
 export class css {
     static readonly errHighlight = "error-highlight";
     static readonly highlight = "highlight";
+    static readonly ok = "ok";
     static readonly error = "error";
     static readonly formField = "form-field";
     static readonly hasValue = "has-value";

@@ -15,12 +15,18 @@ interface Data {
 }
 interface State {
     submit: Submit;
+    header: Header;
     name: Name;
     email: Email;
     message: Message;
 }
 interface Submit {
     disable: boolean;
+}
+interface Header {
+    title: string;
+    isErrorNotice: boolean;
+    isOKNotice: boolean;
 }
 interface Name {
     valid: boolean;
@@ -51,6 +57,7 @@ interface ValidityResult {
 function initState(): State {
     return {
         submit: { disable: false },
+        header: { title: "Ready for a change? Let’s get in touch.", isErrorNotice: false, isOKNotice: false },
         name: { valid: true, valueMissing: false, hasValue: false },
         email: { valid: true, valueMissing: false, typeMismatch: false, hasValue: false },
         message: { valid: true, valueMissing: false, tooShort: false, hasValue: false },
@@ -103,6 +110,11 @@ export class Contact {
         if (form.checkValidity()) {
             return { data: data, focusID: "", valid: true };
         }
+
+        this.state.header = {
+            title: "Please fill in all fields",
+            isErrorNotice: true,
+            isOKNotice: false };
 
         const inputName = data.inputName;
         const name = data.name;
@@ -171,14 +183,13 @@ export class Contact {
                 return false;
         }
     }
-    setErrMessage(msg: string): void {
-        // show error message at top of form (like facebook, closable)
-        console.log(`showErrMessage(${msg}`);
+    setErrMessage(message: string): void {
+        this.state.header = { title: message, isErrorNotice: true, isOKNotice: false }
     }
     setOKMessage(form: HTMLFormElement): void {
-        // show success at top of form (like facebook, closable)
         form.reset();
         this.state = initState();
+        this.state.header = { title: "Thanks for your message!", isErrorNotice: false, isOKNotice: true }
     }
 
     render(): string {
@@ -186,7 +197,17 @@ export class Contact {
 
         const s = this.state;
 
-        let nameField = css.formField;
+        const header = s.header;
+        const title = header.title;
+        let headerClass = "contact-header";
+        if (header.isOKNotice) {
+            headerClass = `${headerClass} ${css.ok}`;
+        }
+        if (header.isErrorNotice) {
+            headerClass = `${headerClass} ${css.error}`;
+        }
+
+        let nameField = css.formField + " clearfix";
         if (s.name.hasValue) {
             nameField = `${nameField} ${css.hasValue}`;
         }
@@ -232,8 +253,8 @@ export class Contact {
 
         return this.html`
     <div class="contact-width">
-        <h2 class="contact-header">Ready for a change? Let’s get in touch.</h2>
         <form action="#" data-action="contactForm" class="contact-form" novalidate>
+            <h2 id="contact-form-header" class="${headerClass}">${title}</h2>
             <div class="${nameField}">
                 <input id="${nameID}" tabindex="1" data-action="contactInput" required type="text"/>
                 <label for="${nameID}">Name</label>

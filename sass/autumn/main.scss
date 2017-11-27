@@ -8,6 +8,13 @@
 //
 // RESET
 //
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 figure {
   margin:0;
 }
@@ -63,9 +70,19 @@ header {
                $error-color);
 
 .contact-header {
+  background: $bg-body-dark;
   font-size: 20px;
   font-weight: 400;
 }
+.contact-header.ok {
+  color: $text-header-primary;
+  background: $bg-header;
+}
+.contact-header.error {
+  color: $text-header-primary;
+  background: $error-color;
+}
+
 .contact-form {
   font-weight: 300;
   background: darken($bg-body-light, 1%);

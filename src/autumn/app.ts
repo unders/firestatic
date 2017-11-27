@@ -61,9 +61,11 @@ export class App {
         if (err) {
             this.logger.info(`Post: Error; server error: ${err}`);
             contact.setErrMessage(err);
+            scrollTo("#contact-form-header");
         } else {
             this.logger.info("Post: OK");
             contact.setOKMessage(form);
+            scrollTo("#contact-form-header");
         }
         contact.enableSubmit();
         this.render();
@@ -82,4 +84,9 @@ export class App {
     render() {
         this.view.render();
     }
+}
+
+function scrollTo(hash: string) {
+    location.hash = "#xxxxxxxxxxxxxxxxxxxxxxxx";
+    location.hash = hash;
 }
