@@ -4,7 +4,7 @@ Firestatic is used for:
 * Deploying them to the firebase hosting platform
 
 ## TODO
- * [ ] update hyperHTML
+ * [ X ] update hyperHTML
  * [ ] Fix so that when one add new images, favicons, fonts, the system
        will automatically handle that. at the moment we must restart the server.
  * [ ] Update readme: add dependency on tmplgen...
@@ -168,3 +168,7 @@ Run command: `make` to list available commands.
 
 ### Photos
 * [Unsplash](https://unsplash.com/)
+
+
+### Libs
+* [hyperHTML](https://github.com/WebReflection/hyperHTML)
