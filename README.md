@@ -5,36 +5,30 @@ Firestatic is used for:
 
 ## TODO
  * [ X ] update hyperHTML
+ * [ X ] Update readme: add dependency on tmplgen...
  * [ ] Fix so that when one add new images, favicons, fonts, the system
        will automatically handle that. at the moment we must restart the server.
- * [ ] Update readme: add dependency on tmplgen...
  * [ ] Lacy load images.
  * [ ] add assets to
  * [ ] add postcss post processing of css add vendor prefixes.
 
 ## Setup
 
-#### 1a. Manual steps (if you have Go installed)
+#### 1a. Manual steps
+Install `https://imageoptim.com/mac`
 
 Run these commands:
 ```
 go get github.com/cortesi/modd/cmd/modd
+go get https://github.com/unders/tmplgen
 brew install openssl
+npm install -g imageoptim-cli
+brew install imagemagick graphicsmagick
 npm install -g typescript
 npm install -g firebase-tools
 ```
 
-#### 1b. Manual steps (if Go is not installed)
-
-First install: [modd](https://github.com/cortesi/modd/releases), then:
-```
-brew install openssl
-npm install -g typescript
-npm install -g firebase-tools
-```
-
-
-#### 2. Install npm packages
+#### 2. Install project npm packages
 
 Run command: `make install`
 
