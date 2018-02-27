@@ -81,12 +81,9 @@ make deploy
 * [Material Palette](https://www.materialpalette.com/)
 * [Paletton](http://paletton.com/#uid=1000u0kllllaFw0g0qFqFg0w0aF)
 
-### Base
-Company X - Creates your online presence
-Services (Web Design, Hosting, Application Development)
-Contact (Your name, Company, Email, Phone, How can we help you?, Send Message)
 
-### Sites
+### Site inspirations
+* https://www.praqma.com/
 * https://m.signalvnoise.com/
 * https://unied.com/
 * https://www.varvet.com/
