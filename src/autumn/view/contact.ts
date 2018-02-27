@@ -1,4 +1,4 @@
-import { bind } from "../../dom/dom";
+import { bind, wire } from "../../dom/dom";
 import { css } from "../../css/css";
 
 const nameID = "contact-name";
@@ -71,6 +71,7 @@ export class Contact {
 
     constructor(root: HTMLElement|null) {
         this.state = initState();
+        this.html = wire();
         if (root) {
             this.notAttached = false;
             this.html = bind(root);

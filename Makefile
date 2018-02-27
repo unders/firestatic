@@ -21,6 +21,7 @@ install: ## installs dependencis
 	## go get github.com/cortesi/modd/cmd/modd
 	## brew install imagemagick graphicsmagick
 	## brew install openssl
+	## npm install
 	## npm install -g imageoptim-cli
 	## npm install -g typescript
 	## npm install -g firebase-tools
