@@ -20,6 +20,9 @@ header {
 .header-name {
   color: $text-body-primary;
   text-decoration: none;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: -.05em;
 }
 .header-phone {
   color: $text-body-primary;
