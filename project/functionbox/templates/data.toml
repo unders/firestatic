@@ -40,14 +40,26 @@ Meta_Description = "Functionbox - creates your future function by function"
 # {{- end }}
 # </ul>
 # Add your own Data arrays here:
-[[Array.Header]]
-    Name = "Firestatic Base Project"
-    URL = "/"
+[[Array.Navigations]]
+    Name = "Home"
+    Path = "/"
 
-[[Array.Header]]
-    Name = "Contact"
-    URL = "/contact"
+[[Array.Navigations]]
+    Name = "Consulting"
+    Path = "/consulting"
+
+[[Array.Navigations]]
+    Name = "Startup"
+    Path = "/startup"
+
+[[Array.Navigations]]
+    Name = "MVP"
+    Path = "/mvp"
+
+[[Array.Navigations]]
+    Name = "Expertise"
+    Path = "/expertise"
 
 [[Array.Footer]]
     Name = "Provider"
-    URL = "/"
+    Path = "/"

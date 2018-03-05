@@ -10,11 +10,7 @@
         </div>
     </div>
     <nav>
-        <a href="/" class="selected">Home</a>
-        <a href="/consulting">Consulting</a>
-        <a href="/startup">Startup</a>
-        <a href="/mvp">MVP</a>
-        <a href="/expertice">Expertise</a>
+        {{- block "header-nav" . }} {{ end }}
     </nav>
 {{ end -}}
 
