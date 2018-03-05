@@ -59,10 +59,18 @@ header nav a.selected  {
 //
 // MAIN
 //
-main {
 
+.slogan {
+  color: $text-body-primary;
+  background: $bg-header-light;
+
+  text-transform: uppercase;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  letter-spacing: -.06em;
+  line-height: 25px;
 }
-
 
 //
 // FOOTER

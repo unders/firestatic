@@ -25,7 +25,7 @@ $max-width: 47rem; // 50rem x 20px = 1000px
   .container {
     display: grid;
     grid-template-areas: "hd" "main" "ft";
-    grid-template-rows: 400px minmax(100px, auto) 100px;
+    grid-template-rows: 424px minmax(150px, auto) 100px;
     grid-gap: 20px;
     height: 100vh;
   }
@@ -80,6 +80,11 @@ main {
   width: 100%;
   @include max-width($max-width);
   @include ph1();
+}
+
+.slogan {
+  @include pv1();
+  font-size: 14px;
 }
 
 //
