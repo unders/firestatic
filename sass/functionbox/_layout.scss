@@ -1,0 +1,95 @@
+@import '../maxwidth';
+@import '../space';
+
+//
+//       CONSTANTS
+//
+$max-width: 47rem; // 50rem x 20px = 1000px
+
+//
+// A MOBILE FIRST GRID
+//
+@supports (display: grid) {
+  //
+  // PAGE GRID
+  //
+  header {
+    grid-area: hd;
+  }
+  main {
+    grid-area: main;
+  }
+  footer {
+    grid-area: ft;
+  }
+  .container {
+    display: grid;
+    grid-template-areas: "hd" "main" "ft";
+    grid-template-rows: 400px minmax(100px, auto) 100px;
+    grid-gap: 20px;
+    height: 100vh;
+  }
+}
+
+//
+// HEADER GRID
+//
+header {
+  width: 100%;
+  @include max-width($max-width);
+  @include ph1();
+}
+.header-top {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header-name {
+  font-size: 40px;
+}
+.header-meta {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.header-meta a {
+  line-height: 30px;
+}
+.header-btn {
+  padding: 6px 10px;
+}
+header nav {
+  padding: 2rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+header nav a {
+  font-size: 16px;
+  padding: 0.7rem 1rem;
+}
+
+
+//
+// MAIN GRID
+//
+main {
+  width: 100%;
+  @include max-width($max-width);
+  @include ph1();
+}
+
+//
+// FOOTER GRID
+//
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @include pa1();
+  @include max-width($max-width);
+}

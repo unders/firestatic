@@ -1,0 +1,73 @@
+@import "../boxmodel";
+@import "../font";
+@import "./palette";
+@import "./layout";
+
+//
+// BODY
+//
+body {
+  background: $bg-body-main;
+  font-size: 20px;
+}
+
+//
+// HEADER
+//
+header {
+  color: $text-body-secondary;
+}
+.header-name {
+  color: $text-body-primary;
+  text-decoration: none;
+}
+.header-phone {
+  color: $text-body-primary;
+  text-decoration: none;
+}
+.header-btn {
+  color: $text-header-primary;
+  border: none;
+  cursor: pointer;
+  background: $bg-header-main;
+}
+.header-btn:hover {
+  background: $bg-header-dark;
+}
+.header-email {
+  color: $bg-header-main;
+  text-decoration: none;
+}
+header nav {
+  background: $bg-header-main;
+}
+header nav a {
+  color: $text-header-primary;
+  text-decoration: none;
+}
+header nav a:hover  {
+  background: $bg-header-dark;
+}
+header nav a.selected  {
+  color: $text-body-primary;
+  border-bottom: 2px solid $text-body-primary;
+}
+
+//
+// MAIN
+//
+main {
+
+}
+
+
+//
+// FOOTER
+//
+footer {
+  color: $text-footer-primary;
+  background: $bg-footer-main;
+}
+
+
+

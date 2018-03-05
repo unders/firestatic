@@ -4,8 +4,7 @@ Firestatic is used for:
 * Deploying them to the firebase hosting platform
 
 ## TODO
- * [ X ] update hyperHTML
- * [ X ] Update readme: add dependency on tmplgen...
+ * [ ] Add functionbox project
  * [ ] Fix so that when one add new images, favicons, fonts, the system
        will automatically handle that. at the moment we must restart the server.
  * [ ] Lacy load images.
@@ -40,6 +39,17 @@ Run command: `make install`
 ## Themes
 * Autumn
 
+
+## Add new project
+First manually copy project/base
+
+```
+mkdir project/functionbox
+cp -R project/base/* project/functionbox/
+manually remove redundant files do updates...
+
+mkdir sass/functionbox
+```
 
 ## Deployment
 

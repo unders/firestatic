@@ -1,7 +1,7 @@
-PROJECT :=project/base
-THEME :=autumn
+PROJECT :=project/functionbox
+THEME :=functionbox
 
-GITTAG :=v0.0.11
+GITTAG :=v0.0.12
 
 BUILDSTAMP :=$(shell date -u '+%Y-%m-%dT%I:%M%p')
 GITHASH :=$(shell git rev-parse HEAD)
