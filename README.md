@@ -84,6 +84,7 @@ make deploy
 * [ImageOptim-CLI](https://jamiemason.github.io/ImageOptim-CLI/)
 
 ### Responsiveness
+* [Resizer](https://material.io/resizer/#device=handset&width=360)
 * [XRespond](http://app.xrespond.com/)
 
 ### Colors
@@ -178,6 +179,9 @@ Run command: `make` to list available commands.
 * [Google fonts get started](https://developers.google.com/fonts/docs/getting_started)
 * [Bevan](https://fonts.google.com/specimen/Bevan?selection.family=Bevan)
 
+
+### Material Design
+* [Web Components](https://material.io/components/web/)
 
 ### Libs
 * [hyperHTML](https://github.com/WebReflection/hyperHTML)

@@ -1,43 +1,27 @@
 @import '../maxwidth';
 @import '../space';
 
-//
-// backdrop
-.backdrop {
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.backdrop a {
-  padding: 4rem 1rem;
-  font-size: 40px;
-}
 
 //
 // CONSTANTS
 
 
-//
-// HEADER
-
-
-//
-// A MOBILE FIRST GRID
-
-
-
 // HEADER GRID
 //
-
+header {
+  padding-top: 100px;
+  height: 62.5%;
+}
+.header-name {
+  font-size: 40px;
+}
+header p {
+  padding: 0 1rem;
+}
 
 
 // MAIN GRID
 //
-
 
 
 // FOOTER GRID

@@ -6,24 +6,31 @@
 // BODY
 //
 body {
-  background: $primary-color-light;
+  height: 100vh;
+  background: $bg-body;
   font-size: 20px;
 }
 
-
-// backdrop
 //
-
-.backdrop a {
-  color: $primary-color-text;
+// HEADER
+header {
+  border-top: 20px solid $primary-color-dark;
+  text-align: center;
   background: $primary-color;
-  border-radius: 0.5rem;
+}
+.header-name {
   font-family: 'Bevan', cursive;
+  color: $primary-color-text;
   text-decoration: none;
 }
-
-.backdrop a:hover {
-  background: $primary-color-dark;
+header p {
+  color: $primary-color-light;
 }
+
+
+
+
+
+
 
 
