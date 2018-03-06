@@ -132,10 +132,13 @@ Run command: `make` to list available commands.
 ### HTTP Caching
 * [HTTP Caching](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching)
 
+### Flexbox
+* [Solved by flexbox](https://philipwalton.github.io/solved-by-flexbox/)
 
 ### CSS Grid
 * [css-grid-supporting-browsers-without-grid](https://www.smashingmagazine.com/2017/11/css-grid-supporting-browsers-without-grid)
 * [CodePen - set the width back to auto](https://codepen.io/rachelandrew/pen/vWmeOE/)
+* [complete css grid guide](https://css-tricks.com/snippets/css/complete-guide-grid/)
 
 ### CSS
 * [Animista](http://animista.net/)
@@ -169,6 +172,11 @@ Run command: `make` to list available commands.
 
 ### Photos
 * [Unsplash](https://unsplash.com/)
+* [Pexels](https://www.pexels.com/search/background/
+
+### Fonts
+* [Google fonts get started](https://developers.google.com/fonts/docs/getting_started)
+* [Bevan](https://fonts.google.com/specimen/Bevan?selection.family=Bevan)
 
 
 ### Libs
