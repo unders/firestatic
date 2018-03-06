@@ -3,82 +3,27 @@
 @import "./palette";
 @import "./layout";
 
-//
 // BODY
 //
 body {
-  background: $bg-body-main;
+  background: $primary-color-light;
   font-size: 20px;
 }
 
+
+// backdrop
 //
-// HEADER
-//
-header {
-  color: $text-body-secondary;
-}
-.header-name {
-  color: $text-body-primary;
-  text-decoration: none;
-  font-style: italic;
-  font-weight: bold;
-  letter-spacing: -.05em;
-}
-.header-phone {
-  color: $text-body-primary;
+
+.backdrop a {
+  color: $primary-color-text;
+  background: $primary-color;
+  border-radius: 0.5rem;
+  font-family: 'Bevan', cursive;
   text-decoration: none;
 }
-.header-btn {
-  color: $text-header-primary;
-  border: none;
-  cursor: pointer;
-  background: $bg-header-main;
-}
-.header-btn:hover {
-  background: $bg-header-dark;
-}
-.header-email {
-  color: $bg-header-main;
-  text-decoration: none;
-}
-header nav {
-  background: $bg-header-main;
-}
-header nav a {
-  color: $text-header-primary;
-  text-decoration: none;
-}
-header nav a:hover  {
-  background: $bg-header-dark;
-}
-header nav a.selected  {
-  color: $text-body-primary;
-  border-bottom: 2px solid $text-body-primary;
-}
 
-//
-// MAIN
-//
-
-.slogan {
-  color: $text-body-primary;
-  background: $bg-header-light;
-
-  text-transform: uppercase;
-  text-align: center;
-  font-style: italic;
-  font-weight: bold;
-  letter-spacing: -.06em;
-  line-height: 25px;
+.backdrop a:hover {
+  background: $primary-color-dark;
 }
-
-//
-// FOOTER
-//
-footer {
-  color: $text-footer-primary;
-  background: $bg-footer-main;
-}
-
 
 

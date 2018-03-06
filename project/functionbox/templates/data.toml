@@ -21,10 +21,7 @@ Filename = "main.html"
 # Add your own string values here:
 [String]
 Title = "Functionbox"
-Title_Index = "Home | Functionbox"
-Title_SayHello = "Say Hello | Functionbox"
-Title_404 = "Page Not Found | Functionbox"
-Meta_Description = "Functionbox - creates your future function by function"
+Meta_Description = "Creates your feature function by function"
 
 
 
@@ -45,21 +42,18 @@ Meta_Description = "Functionbox - creates your future function by function"
     Path = "/"
 
 [[Array.Navigations]]
-    Name = "Consulting"
-    Path = "/consulting"
+    Name = "MVP"
+    Path = "/mvp"
 
 [[Array.Navigations]]
     Name = "Startup"
     Path = "/startup"
 
 [[Array.Navigations]]
-    Name = "MVP"
-    Path = "/mvp"
-
-[[Array.Navigations]]
     Name = "Expertise"
     Path = "/expertise"
 
-[[Array.Footer]]
-    Name = "Provider"
-    Path = "/"
+[[Array.Navigations]]
+    Name = "Consulting"
+    Path = "/consulting"
+

@@ -1,16 +1,14 @@
 {{- define "part/header" -}}
     <div class="header-top">
         <a href="/" class="header-name">Functionbox</a>
-        <div class="header-meta">
-            <a href="tel:+46735151482" class="header-phone">+46 73 515 14 82</a>
-            <a  href="mailto:hello@functionbox.io" class="header-email">
-                hello@functionbox.io
-            </a>
-            <button class="header-btn">Say Hello</button>
+        <div class="header-slogan">
+            Creates your feature function by function
         </div>
     </div>
     <nav>
-        {{- block "header-nav" . }} {{ end }}
+        {{ range .Array.Navigations }}
+            <a href="{{.Path}}">{{.Name}}</a>
+        {{ end }}
     </nav>
 {{ end -}}
 

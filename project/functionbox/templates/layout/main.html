@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{.String.Meta_Description}}">
     <title>{{block "title" . }} {{.String.Title}} {{end}}</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bevan&text=Functionbox">
     <link rel="stylesheet" href="/assets/css/normalize.css">
     <link rel="stylesheet" href="/assets/css/boilerplate.css">
     <link rel="stylesheet" href="/assets/css/main.css"><!--
@@ -17,10 +18,10 @@
         <script defer src="/__/firebase/init.js"></script>-->
 </head>
 <body>
+<div class="backdrop">
+    <a href="/">Functionbox</a>
+</div>
 <div class="container">
-    <header>{{ template "part/header" . }}</header>
-    <main>{{- block "main" . }} {{ end }}</main>
-    <footer>{{ template "part/footer" . }}</footer>
 </div>
 <script async src="/assets/js/bundle.js"></script>
 </body>
