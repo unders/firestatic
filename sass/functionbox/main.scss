@@ -18,13 +18,41 @@ header {
   text-align: center;
   background: $primary-color;
 }
-.header-name {
+header a {
   font-family: 'Bevan', cursive;
   color: $primary-color-text;
   text-decoration: none;
 }
 header p {
   color: $primary-color-light;
+}
+//
+// MAIN
+.card {
+  background: $bg-body;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  border-radius: 4px;
+}
+.card picture img {
+  background: darken($bg-body, 5%);
+  border-radius: 4px 4px 0 0;
+  object-fit: cover;
+}
+.card h2 {
+  font-family: 'Bevan', cursive;
+}
+.card footer {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  text-transform: uppercase;
+}
+.card footer a {
+  color: $accent-color;
+  cursor: pointer;
+  text-decoration: none;
+}
+.card footer a:hover {
+  border-radius: 4px;
+  background: darken($bg-body, 5%);
 }
 
 

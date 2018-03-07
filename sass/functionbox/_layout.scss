@@ -5,23 +5,60 @@
 //
 // CONSTANTS
 
-
-// HEADER GRID
 //
+// HEADER
 header {
+  position: relative;
   padding-top: 100px;
   height: 62.5%;
 }
-.header-name {
+header a {
   font-size: 40px;
 }
 header p {
   padding: 0 1rem;
 }
-
-
-// MAIN GRID
 //
+// MAIN
+main {
+  z-index: 30;
+  top: 320px;
+  width: 100%;
+  position: absolute;
+}
+.main-center {
+  @include max-width(800px);
+}
+.card {
+  margin: 20px 10px;
+  position: relative;
+}
+.card picture img {
+  height: 150px;
+  width: 100%;
+  min-width: 100%;
+}
+.card h2 {
+  font-size: 40px;
+  position: absolute;
+  top: 90px;
+  left: 20px;
+  margin: 0;
+}
+.card p {
+  margin:0;
+  padding: 2em 2em;
+  max-width: 685px;
+  font-size: 16px;
+}
+.card footer {
+  padding: 1em;
+  text-align: right;
+}
+.card footer a {
+  font-size: 16px;
+  padding: 1em 1em;
+}
 
 
 // FOOTER GRID

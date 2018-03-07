@@ -173,7 +173,7 @@ Run command: `make` to list available commands.
 
 ### Photos
 * [Unsplash](https://unsplash.com/)
-* [Pexels](https://www.pexels.com/search/background/
+* [Pexels](https://www.pexels.com/search/background/)
 
 ### Fonts
 * [Google fonts get started](https://developers.google.com/fonts/docs/getting_started)
